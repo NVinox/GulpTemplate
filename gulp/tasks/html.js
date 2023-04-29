@@ -5,6 +5,8 @@ module.exports = () => {
 	return plugins.gulp
 		.src(path.src.html)
 		.pipe(plugins.plumber())
+		.pipe(plugins.fileInclude())
+		.pipe(plugins.replace(/@images\//g, "assets/images/"))
 		.pipe(plugins.htmlmin({ removeComments: true, collapseWhitespace: true }))
 		.pipe(plugins.gulp.dest(path.build.html));
 };

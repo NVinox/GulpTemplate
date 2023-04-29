@@ -10,6 +10,8 @@ const imagemin = require("gulp-imagemin");
 const rename = require("gulp-rename");
 const uglify = require("gulp-uglify");
 const htmlmin = require("gulp-htmlmin");
+const fileInclude = require("gulp-file-include");
+const replace = require("gulp-replace");
 const plumber = require("gulp-plumber");
 
 module.exports = {
@@ -26,4 +28,6 @@ module.exports = {
 	removeComments,
 	uglify,
 	htmlmin,
+	fileInclude,
+	replace,
 };
