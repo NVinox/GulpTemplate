@@ -18,5 +18,6 @@ module.exports = () => {
 				}),
 			])
 		)
-		.pipe(plugins.gulp.dest(path.build.images));
+		.pipe(plugins.gulp.dest(path.build.images))
+		.pipe(plugins.browserSync.reload({ stream: true }));
 };

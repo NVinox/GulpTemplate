@@ -22,5 +22,6 @@ module.exports = () => {
 		)
 		.pipe(plugins.csso())
 		.pipe(plugins.removeComments())
-		.pipe(plugins.gulp.dest(path.build.css));
+		.pipe(plugins.gulp.dest(path.build.css))
+		.pipe(plugins.browserSync.reload({ stream: true }));
 };

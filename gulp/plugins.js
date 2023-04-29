@@ -1,4 +1,5 @@
 const gulp = require("gulp");
+const browserSync = require("browser-sync").create();
 const del = require("del");
 const cssbeautify = require("gulp-cssbeautify");
 const sass = require("gulp-sass")(require("sass"));
@@ -17,6 +18,7 @@ const plumber = require("gulp-plumber");
 module.exports = {
 	gulp,
 	del,
+	browserSync,
 	imagemin,
 	plumber,
 	sass,

@@ -12,5 +12,6 @@ module.exports = () => {
 				extname: ".js",
 			})
 		)
-		.pipe(plugins.gulp.dest(path.build.js));
+		.pipe(plugins.gulp.dest(path.build.js))
+		.pipe(plugins.browserSync.reload({ stream: true }));
 };

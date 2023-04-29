@@ -12,5 +12,6 @@ module.exports = () => {
 		.pipe(plugins.replace(/@scss\//g, "assets/style/"))
 		.pipe(plugins.replace(/css/g, "min.css"))
 		.pipe(plugins.htmlmin({ removeComments: true, collapseWhitespace: true }))
-		.pipe(plugins.gulp.dest(path.build.html));
+		.pipe(plugins.gulp.dest(path.build.html))
+		.pipe(plugins.browserSync.reload({ stream: true }));
 };
