@@ -11,6 +11,8 @@ const watchFiles = require("./gulp/watch.js");
 
 const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
+const oserver = gulp.parallel(build, watchFiles);
 
 gulp.task("build", build);
-gulp.task("watch", watch);
+gulp.task("dev", watch);
+gulp.task("oserver", oserver);

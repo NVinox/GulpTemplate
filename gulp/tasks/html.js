@@ -1,5 +1,6 @@
 const plugins = require("../plugins.js");
 const path = require("../path.js");
+const variables = require("../variables.js");
 
 module.exports = () => {
 	return plugins.gulp
@@ -20,5 +21,10 @@ module.exports = () => {
 		.pipe(plugins.replace(/css/g, "min.css"))
 		.pipe(plugins.htmlmin({ removeComments: true, collapseWhitespace: true }))
 		.pipe(plugins.gulp.dest(path.build.html))
-		.pipe(plugins.browserSync.reload({ stream: true }));
+		.pipe(
+			plugins.gulpif(
+				variables.isDefault,
+				plugins.browserSync.reload({ stream: true })
+			)
+		);
 };

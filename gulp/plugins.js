@@ -14,6 +14,7 @@ const htmlmin = require("gulp-htmlmin");
 const fileInclude = require("gulp-file-include");
 const replace = require("gulp-replace");
 const csso = require("gulp-csso");
+const gulpif = require("gulp-if");
 const plumber = require("gulp-plumber");
 
 module.exports = {
@@ -34,4 +35,5 @@ module.exports = {
 	fileInclude,
 	replace,
 	csso,
+	gulpif,
 };
