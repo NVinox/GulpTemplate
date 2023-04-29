@@ -20,14 +20,7 @@ module.exports = () => {
 				extname: ".css",
 			})
 		)
-		.pipe(
-			plugins.cssnano({
-				zindex: false,
-				discardComments: {
-					removeAll: true,
-				},
-			})
-		)
+		.pipe(plugins.csso())
 		.pipe(plugins.removeComments())
 		.pipe(plugins.gulp.dest(path.build.css));
 };
