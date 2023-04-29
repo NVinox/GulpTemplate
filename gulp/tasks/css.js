@@ -4,7 +4,14 @@ const path = require("../path.js");
 module.exports = () => {
 	return plugins.gulp
 		.src(path.src.scss)
-		.pipe(plugins.plumber())
+		.pipe(
+			plugins.plumber(
+				plugins.notify.onError({
+					title: "SCSS",
+					message: "Error: <%= error.message %>",
+				})
+			)
+		)
 		.pipe(plugins.sass())
 		.pipe(
 			plugins.autoprefixer({

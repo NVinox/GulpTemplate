@@ -5,6 +5,7 @@ const cssbeautify = require("gulp-cssbeautify");
 const sass = require("gulp-sass")(require("sass"));
 const removeComments = require("gulp-strip-css-comments");
 const panini = require("panini");
+const notify = require("gulp-notify");
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const rename = require("gulp-rename");
@@ -23,6 +24,7 @@ module.exports = {
 	plumber,
 	sass,
 	panini,
+	notify,
 	autoprefixer,
 	cssbeautify,
 	rename,

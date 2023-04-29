@@ -4,7 +4,14 @@ const path = require("../path.js");
 module.exports = () => {
 	return plugins.gulp
 		.src(path.src.html)
-		.pipe(plugins.plumber())
+		.pipe(
+			plugins.plumber(
+				plugins.notify.onError({
+					title: "HTML",
+					message: "Error: <%= error.message %>",
+				})
+			)
+		)
 		.pipe(plugins.fileInclude())
 		.pipe(plugins.replace(/@images\//g, "assets/images/"))
 		.pipe(plugins.replace(/@script\//g, "assets/scripts/"))

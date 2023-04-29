@@ -4,7 +4,14 @@ const path = require("../path.js");
 module.exports = () => {
 	return plugins.gulp
 		.src(path.src.js)
-		.pipe(plugins.plumber())
+		.pipe(
+			plugins.plumber(
+				plugins.notify.onError({
+					title: "JS",
+					message: "Error: <%= error.message %>",
+				})
+			)
+		)
 		.pipe(plugins.uglify())
 		.pipe(
 			plugins.rename({

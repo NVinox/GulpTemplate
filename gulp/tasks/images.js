@@ -4,7 +4,14 @@ const path = require("../path.js");
 module.exports = () => {
 	return plugins.gulp
 		.src(path.src.images)
-		.pipe(plugins.plumber())
+		.pipe(
+			plugins.plumber(
+				plugins.notify.onError({
+					title: "IMAGES",
+					message: "Error: <%= error.message %>",
+				})
+			)
+		)
 		.pipe(
 			plugins.imagemin([
 				plugins.imagemin.optipng({
