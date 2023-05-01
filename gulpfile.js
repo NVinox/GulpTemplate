@@ -5,12 +5,14 @@ const html = require("./gulp/tasks/html.js");
 const css = require("./gulp/tasks/css.js");
 const clean = require("./gulp/tasks/clean.js");
 const images = require("./gulp/tasks/images.js");
-const fonts = require("./gulp/tasks/fonts.js");
 const serve = require("./gulp/tasks/server.js");
 const watchFiles = require("./gulp/watch.js");
+const { otfToTtf, ttfToWoff, fontStyles } = require("./gulp/tasks/fonts.js");
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
-const watch = gulp.parallel(build, watchFiles, serve);
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyles);
+
+const build = gulp.series(clean, fonts, gulp.parallel(css, js, images, html));
+const watch = gulp.series(build, gulp.parallel(watchFiles, serve));
 const oserver = gulp.parallel(build, watchFiles);
 
 gulp.task("build", build);

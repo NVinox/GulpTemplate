@@ -20,6 +20,7 @@ module.exports = () => {
 				overrideBrowserslist: ["last 3 versions"],
 			})
 		)
+		.pipe(plugins.replace(/\.\.\/\.\.\/fonts/g, "../fonts"))
 		.pipe(plugins.cssbeautify())
 		.pipe(plugins.gulp.dest(path.build.css))
 		.pipe(

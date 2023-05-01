@@ -16,14 +16,12 @@ module.exports = {
 		scss: `${srcPath}/assets/scss/*.scss`,
 		js: `${srcPath}/assets/scripts/**/*.js`,
 		images: `${srcPath}/assets/images/**/*.{jpeg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}/assets/fonts/**/*.{eot,woff,woff2,ttf,svg}`,
 	},
 	watch: {
 		html: `${srcPath}/**/*.html`,
 		scss: `${srcPath}/assets/scss/**/*.scss`,
 		js: `${srcPath}/assets/scripts/**/*.js`,
 		images: `${srcPath}/assets/images/**/*.{jpeg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}/assets/fonts/**/*.{eot,woff,woff2,ttf,svg}`,
 	},
 	clean: `./${distPath}`,
 };
