@@ -45,8 +45,8 @@ exports.fontStyles = () => {
 
 				fs.writeFile(fontsFile, "", cb);
 
-				for (let i = 0; i < fontsFiles.length; i++) {
-					let fontFileName = fontsFiles[i].split(".")[0];
+				fontsFiles.forEach((file) => {
+					let fontFileName = file.split(".")[0];
 
 					if (newFileOnly !== fontFileName) {
 						let fontName = fontFileName.split("-")[0]
@@ -84,7 +84,7 @@ exports.fontStyles = () => {
 
 						newFileOnly = fontFileName;
 					}
-				}
+				});
 			} else {
 				console.log(
 					"File scss/global/fonts.scss exist. You need delete this file for refresh."
