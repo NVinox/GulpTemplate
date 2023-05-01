@@ -22,7 +22,9 @@ module.exports = () => {
 		)
 		.pipe(plugins.replace(/\.\.\/\.\.\/fonts/g, "../fonts"))
 		.pipe(plugins.cssbeautify())
-		.pipe(plugins.gulp.dest(path.build.css))
+		.pipe(
+			plugins.gulpif(variables.isDefault, plugins.gulp.dest(path.build.css))
+		)
 		.pipe(
 			plugins.rename({
 				suffix: ".min",
