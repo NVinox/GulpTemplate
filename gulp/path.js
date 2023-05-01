@@ -19,7 +19,7 @@ module.exports = {
 	},
 	watch: {
 		html: `${srcPath}/**/*.html`,
-		scss: `${srcPath}/assets/scss/**/*.scss`,
+		scss: `${srcPath}/assets/scss/*.scss`,
 		js: `${srcPath}/assets/scripts/**/*.js`,
 		images: `${srcPath}/assets/images/**/*.{jpeg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
 	},

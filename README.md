@@ -66,7 +66,8 @@
                       |-script.js
                 |-scss-
                       |...
-                      |-global
+                      |-global-
+                              |...
                       |-index.scss
 ```
 

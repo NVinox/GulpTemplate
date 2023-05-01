@@ -2,6 +2,7 @@ const fs = require("fs");
 const plugins = require("../plugins.js");
 const path = require("../path.js");
 
+// Функция конвертации шрифтов из otf в ttf
 exports.otfToTtf = () => {
 	return plugins.gulp
 		.src(`${path.srcPath}/assets/fonts/*.otf`)
@@ -17,6 +18,7 @@ exports.otfToTtf = () => {
 		.pipe(plugins.gulp.dest(`${path.srcPath}/assets/fonts`));
 };
 
+// Функция конвертации шрифтов из ttf в woff и woff2
 exports.ttfToWoff = () => {
 	return plugins.gulp
 		.src(`${path.srcPath}/assets/fonts/*.ttf`)
@@ -35,6 +37,7 @@ exports.ttfToWoff = () => {
 		.pipe(plugins.gulp.dest(path.build.fonts));
 };
 
+// Функция создания стилей для шрифтов
 exports.fontStyles = () => {
 	let fontsFile = `${path.srcPath}/assets/scss/global/fonts.scss`;
 
