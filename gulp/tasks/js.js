@@ -20,6 +20,7 @@ module.exports = () => {
 				extname: ".js",
 			})
 		)
+		.pipe(plugins.replace(/\.js/g, ".min.js"))
 		.pipe(plugins.gulp.dest(path.build.js))
 		.pipe(
 			plugins.gulpif(
