@@ -12,9 +12,9 @@ const { otfToTtf, ttfToWoff, fontStyles } = require("./gulp/tasks/fonts.js");
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyles);
 
 const build = gulp.series(clean, fonts, gulp.parallel(css, js, images, html));
-const watch = gulp.series(build, gulp.parallel(watchFiles, serve));
-const oserver = gulp.parallel(build, watchFiles);
+const dev = gulp.series(build, gulp.parallel(watchFiles, serve));
+const oserver = gulp.series(build, watchFiles);
 
 gulp.task("build", build);
-gulp.task("dev", watch);
+gulp.task("dev", dev);
 gulp.task("oserver", oserver);
