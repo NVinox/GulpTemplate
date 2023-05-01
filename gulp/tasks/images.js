@@ -13,16 +13,14 @@ module.exports = () => {
 				})
 			)
 		)
+		.pipe(plugins.newer(path.build.images))
 		.pipe(
 			plugins.imagemin([
-				plugins.imagemin.optipng({
-					optimizationLevel: 5,
-				}),
-				plugins.imagemin.gifsicle({
-					optimizationLevel: 2,
-				}),
-				plugins.imagemin.mozjpeg({
-					quality: 80,
+				plugins.imagemin.gifsicle({ interlaced: true }),
+				plugins.imagemin.mozjpeg({ quality: 75, progressive: true }),
+				plugins.imagemin.optipng({ optimizationLevel: 5 }),
+				plugins.imagemin.svgo({
+					plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
 				}),
 			])
 		)

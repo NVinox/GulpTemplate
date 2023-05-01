@@ -17,6 +17,7 @@ const replace = require("gulp-replace");
 const csso = require("gulp-csso");
 const gulpif = require("gulp-if");
 const ttf2woff2 = require("gulp-ttf2woff2");
+const newer = require("gulp-newer");
 const plumber = require("gulp-plumber");
 
 module.exports = {
@@ -40,4 +41,5 @@ module.exports = {
 	replace,
 	csso,
 	gulpif,
+	newer,
 };
