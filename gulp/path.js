@@ -15,13 +15,13 @@ module.exports = {
 		html: `${srcPath}/*.html`,
 		scss: `${srcPath}/assets/scss/*.scss`,
 		js: `${srcPath}/assets/scripts/**/*.js`,
-		images: `${srcPath}/assets/images/**/*.{jpeg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
+		images: `${srcPath}/assets/images/**/*.{jpeg,jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
 	},
 	watch: {
 		html: `${srcPath}/**/*.html`,
 		scss: `${srcPath}/assets/scss/*.scss`,
 		js: `${srcPath}/assets/scripts/**/*.js`,
-		images: `${srcPath}/assets/images/**/*.{jpeg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
+		images: `${srcPath}/assets/images/**/*.{jpeg,jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
 	},
 	clean: `./${distPath}`,
 };
